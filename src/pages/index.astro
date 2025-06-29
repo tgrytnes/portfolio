@@ -1,11 +1,121 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import MarkdownModal from '../components/MarkdownModal.astro';
+import CheatDoc from '../content/Versicherungsmathematik mit Kenntnisstand.md';
+import timeline from '../content/timeline.yaml';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { getCollection } from 'astro:content';
+const rawProjects = await getCollection('projects');
+const projects = rawProjects.map(project => ({ frontmatter: project.data }));
 ---
 
 <Layout>
-	<Welcome />
+  <!-- Hero / intro -->
+  <section class="relative flex flex-col items-center py-24 md:py-32 bg-gradient-to-b from-indigo-50 via-white to-white overflow-hidden">
+    <!-- Decorative background blob -->
+    <svg aria-hidden="true"
+      class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 blur-2xl w-[60rem] h-[60rem] text-indigo-100 pointer-events-none"
+      viewBox="0 0 600 600" fill="currentColor">
+      <path d="M300 0c150 0 300 300 300 300s-150 300-300 300S0 450 0 300 150 0 300 0z" />
+    </svg>
+
+    <img
+      src="/images/me.png"
+      alt="Portrait Thomas Fey-Grytnes"
+      class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-md"
+    />
+
+    <h1 class="mt-6 text-3xl font-bold text-gray-800">
+      Thomas Fey-Grytnes
+    </h1>
+    <p class="mt-2 text-lg text-gray-600 max-w-md text-center">
+      Mathematiker · IT Project Manager · Data Scientist<br/>
+      <span class="font-semibold text-indigo-700">Freelancer</span>
+    </p>
+  </section>
+
+  <section class="my-16 container mx-auto px-6 max-w-6xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24" style="grid-template-columns: minmax(400px,1.1fr) 1.3fr;">
+      <!-- Left column: Timeline -->
+      <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+        <h2 class="text-3xl font-bold mb-16 text-center md:text-left">Timeline</h2>
+        <div class="relative">
+          <ul class="space-y-16 timeline">
+            {timeline.map((item, idx) => (
+              <li class="timeline-item flex items-start gap-4 pl-8 relative">
+                <div class="absolute left-2 top-2 w-2 h-2 bg-purple-600 rounded-full"></div>
+                <div class="text-sm font-medium text-gray-700 pt-[2px] min-w-[120px] whitespace-nowrap">{item.period}</div>
+                <div class="leading-tight">
+                  <p class="text-base font-semibold text-gray-800">{item.title}</p>
+                  <p class="text-sm text-gray-600">{item.org}{item.place && ` · ${item.place}`}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right column: Multiple Sections -->
+      <div class="space-y-8">
+        <!-- Section: Case Study -->
+        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+          <h2 class="text-3xl font-bold mb-4">Versicherungsmathematik</h2>
+          <p class="mt-4 text-gray-600">
+            Kurzübersicht aller Versicherungsmathematik-Themen und meines Kenntnisstands.
+          </p>
+          <div class="mt-4 text-center md:text-left">
+            <MarkdownModal
+              Content={CheatDoc}
+              trigger="Themen anzeigen"
+              download="/content/Versicherungsmathematik.md"
+              triggerClass="btn inline-flex items-center gap-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-medium shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-200 ease-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
+            />
+          </div>
+        </div>
+
+        <!-- Section: Data Science -->
+        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+          <h2 class="text-3xl font-bold mb-4">Data Science</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Predictive Modeling with Python</li>
+            <li>Data Analysis with pandas & NumPy</li>
+            <li>Visualization with Matplotlib & Seaborn</li>
+          </ul>
+          <div class="mt-4 text-center md:text-left">
+            <a
+              href="https://github.com/tgrytnes/kmeans-demo"
+              target="_blank"
+              class="btn"
+            >
+              View K-Means Demo on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Skills -->
+        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+          <h2 class="text-3xl font-bold mb-4">Skills</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Atlassian tools (Jira & Confluence) – Admin skills</li>
+            <li>MS Office (Excel, Word, PowerPoint)</li>
+            <li>SAP (basic user proficiency)</li>
+          </ul>
+        </div>
+
+        <!-- Section: Certificates -->
+        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+          <h2 class="text-3xl font-bold mb-4">Certificates</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Project Management Professional (PMP) – PMI</li>
+            <li>ITIL 4 Foundation – PeopleCert</li>
+            <li>Certified SAFe® 6 Agilist (SA) – Scaled Agile</li>
+            <li>K-Means for Data Science – University of London</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+</section>
+<div class="h-16"></div>
 </Layout>

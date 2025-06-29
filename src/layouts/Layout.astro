@@ -1,3 +1,8 @@
+---
+import '../styles/global.css';
+import '../styles/overrides.css';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,6 +11,28 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <style>
+    /* Obsidian-style tables */
+    .prose table {
+      border-collapse: separate;
+      border-spacing: 0 10px;
+    }
+    .prose th,
+    .prose td {
+      border: 1px solid #94a3b8;
+      padding: 1rem 1.25rem;
+      vertical-align: middle;
+    }
+    .prose tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    .prose thead th {
+      position: sticky;
+      top: 0;
+      background: #f1f5f9;
+    }
+  </style>
 	</head>
 	<body>
 		<slot />

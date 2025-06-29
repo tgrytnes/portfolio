@@ -1,0 +1,82 @@
+---
+/**
+ * Props
+ *  - Content      imported Markdown component (e.g. `import Doc from '../content/foo.md'`)
+ *  - trigger      button label (string, optional)
+ *  - download     URL/path to raw .md for “save” button (optional)
+ *  - triggerClass CSS classes for the trigger button (string, optional)
+ */
+const {
+  Content,
+  trigger      = '📑 Cheat‑Sheet',
+  download     = null,
+  triggerClass = '',
+} = Astro.props;
+
+const id = `modal-${Astro.uniqueId}`;
+---
+
+<!-- Trigger-Button -->
+<button
+  onclick={`document.getElementById('${id}').showModal()`}
+  class={triggerClass}>
+  {trigger}
+</button>
+
+<dialog id={id}
+        class="backdrop:bg-black/50 backdrop-blur-sm open:animate-fade-in border-0 p-0 rounded-xl shadow-2xl w-[90vw] md:w-[70vw] max-h-[90vh]">
+
+  <form method="dialog" class="relative bg-white rounded-xl flex flex-col max-h-[90vh] overflow-auto">
+
+    <!-- Header bar -->
+    <header class="flex items-center justify-between bg-indigo-600 text-white px-6 py-3">
+      <h2 class="text-lg font-medium">{trigger}</h2>
+
+      <div class="flex items-center gap-4">
+        {download && (
+          <a href={download} download
+             class="hover:text-indigo-200 focus:outline-none focus:ring-2 focus:ring-white rounded"
+             aria-label="Markdown herunterladen">
+            ⬇️
+          </a>
+        )}
+
+        <button type="submit"
+                class="text-2xl leading-none hover:text-indigo-200 focus:outline-none"
+                aria-label="Close">&times;</button>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <article class="prose lg:prose-lg p-8 flex-1">
+      <Content />
+    </article>
+  </form>
+
+  <style>
+    /* Fade-in animation */
+    @keyframes fade-in {
+      from { opacity: 0; transform: scale(0.96); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    dialog[open].animate-fade-in {
+      animation: fade-in 0.25s ease-out;
+    }
+
+    dialog table {
+      width: 100%;
+      table-layout: auto;
+      border-collapse: collapse;
+    }
+
+    dialog th,
+    dialog td {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    dialog .prose {
+      max-width: 100%;
+    }
+  </style>
+</dialog>

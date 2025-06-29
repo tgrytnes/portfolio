@@ -1,0 +1,22 @@
+/* src/styles/overrides.css */
+
+/* Obsidian-style tables in any .prose (including your modal) */
+.prose table {
+  border-collapse: separate !important;
+  border-spacing: 0 10px !important;
+}
+.prose th,
+.prose td {
+  border: 1px solid #94a3b8 !important;   /* slate-400 */
+  padding: 1rem 1.25rem !important;
+  vertical-align: middle !important;
+}
+.prose tbody tr:nth-child(even) td {
+  background: #f8fafc !important;         /* slate-50 */
+}
+.prose thead th {
+  position: sticky !important;
+  top: 0 !important;
+  background: #f1f5f9 !important;         /* slate-100 */
+  z-index: 1 !important;
+}

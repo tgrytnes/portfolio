@@ -1,0 +1,13 @@
+---
+// src/components/ProjectCard.astro
+const { frontmatter } = Astro.props;
+---
+<li>
+  <button onClick={() => openModal(frontmatter.slug)}
+          class="block text-left bg-white rounded-xl p-5 shadow-lg hover:shadow-2xl
+                 transition hover:-translate-y-1">
+    <img src={frontmatter.logo} alt="" class="h-10 w-10 mb-3" />
+    <h3 class="font-semibold text-gray-800">{frontmatter.title}</h3>
+    <p class="text-sm text-gray-600">{frontmatter.tagline}</p>
+  </button>
+</li>
