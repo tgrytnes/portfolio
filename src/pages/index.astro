@@ -4,14 +4,15 @@ const preferred = acceptLanguage?.startsWith('de') ? 'de' : 'en';
 const target = `/${preferred}/`;
 ---
 
-<html lang="en">
+<html lang={preferred}>
   <head>
     <meta http-equiv="refresh" content={`0; URL='${target}'`} />
-    <script>
-      window.location.href = {{ JSON.stringify(target) }};
-    </script>
   </head>
-  <body>
-    <p>Redirecting to your preferred language…</p>
+  <body class="text-center p-8">
+    <p>
+      {preferred === 'de'
+        ? 'Du wirst weitergeleitet…'
+        : 'Redirecting to your preferred language…'}
+    </p>
   </body>
 </html>

@@ -4,17 +4,23 @@ const preferred = acceptLanguage?.startsWith('de') ? 'de' : 'en';
 const target = `/${preferred}/`;
 ---
 
-<html lang="en">
+<html lang={preferred}>
   <head>
-    <meta http-equiv="refresh" content="2; URL='${target}'" />
-    <script>
-      const target = {{ JSON.stringify(target) }};
-      setTimeout(() => {
-        window.location.href = target;
-      }, 2000);
-    </script>
+    <meta http-equiv="refresh" content={`2; URL='${target}'`} />
   </head>
-  <body>
-    <p>Page not found. Redirecting to homepage…</p>
+  <body class="text-center p-8">
+    <h1>
+      {preferred === 'de' ? 'Seite nicht gefunden' : 'Page not found'}
+    </h1>
+    <p>
+      {preferred === 'de'
+        ? 'Du wirst in wenigen Sekunden weitergeleitet…'
+        : 'You will be redirected in a few seconds…'}
+    </p>
+    <p>
+      <a href={target} class="text-blue-600 underline">
+        {preferred === 'de' ? 'Zur Startseite' : 'Go to homepage'}
+      </a>
+    </p>
   </body>
 </html>
