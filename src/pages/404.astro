@@ -6,10 +6,10 @@ const target = `/${preferred}/`;
 
 <html lang="en">
   <head>
-    <meta http-equiv="refresh" content={`2; URL='${target}'`} />
+    <meta http-equiv="refresh" content="2; URL='${target}'" />
     <script>
       setTimeout(() => {
-        window.location.href = {JSON.stringify(target)};
+        window.location.href = {{ JSON.stringify(target) }};
       }, 2000);
     </script>
   </head>

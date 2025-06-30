@@ -8,7 +8,8 @@ const target = `/${preferred}/`;
   <head>
     <meta http-equiv="refresh" content={`0; URL='${target}'`} />
     <script>
-      window.location.href = {JSON.stringify(target)};
+      const target = {{ JSON.stringify(target) }};
+      window.location.href = target;
     </script>
   </head>
   <body>
