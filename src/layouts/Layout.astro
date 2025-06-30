@@ -1,10 +1,12 @@
 ---
 import '../styles/global.css';
 import '../styles/overrides.css';
+export interface Props { lang: string; }
+const { lang } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -35,6 +37,16 @@ import '../styles/overrides.css';
   </style>
 	</head>
 	<body>
+    <nav class="language-switcher bg-white/50 backdrop-blur-md py-2 px-4 fixed top-0 right-0 rounded-bl-lg shadow-md z-50">
+      <ul class="flex items-center space-x-2">
+        <li>
+          <a href={`/${lang === 'de' ? 'en' : 'de'}/`} class="flex items-center space-x-1">
+            <span class="text-xl">{lang === 'de' ? '🇬🇧' : '🇩🇪'}</span>
+            <span class="font-medium">{lang === 'de' ? 'English' : 'Deutsch'}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 		<slot />
 	</body>
 </html>

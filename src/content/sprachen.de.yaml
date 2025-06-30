@@ -1,0 +1,11 @@
+# content/sprachen.de.yaml
+title: "Sprachen"
+languages:
+  - name: "Deutsch"
+    level: "fließend"
+  - name: "Englisch"
+    level: "fließend"
+  - name: "Norwegisch"
+    level: "Muttersprache"
+  - name: "Schwedisch, Dänisch"
+    level: "fließend (natürliches Verständnis durch Norwegisch)"

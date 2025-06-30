@@ -1,0 +1,15 @@
+# content/zertifikate.de.yaml
+title: "Zertifikate"
+certificates:
+  - name: "Project Management Professional (PMP)"
+    issuer: "PMI"
+    year: 2010
+  - name: "ITIL 4 Foundation"
+    issuer: "PeopleCert"
+    year: 2025
+  - name: "Certified SAFe® 6 Agilist (SA)"
+    issuer: "Scaled Agile"
+    year: 2025
+  - name: "K-Means for Data Science"
+    issuer: "University of London"
+    year: 2025

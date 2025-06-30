@@ -1,0 +1,11 @@
+# content/sprachen.en.yaml
+title: "Languages"
+languages:
+  - name: "German"
+    level: "Fluent"
+  - name: "English"
+    level: "Fluent"
+  - name: "Norwegian"
+    level: "Native"
+  - name: "Swedish, Danish"
+    level: "Fluent (native comprehension through Norwegian)"

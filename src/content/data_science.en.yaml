@@ -1,0 +1,15 @@
+# content/data_science.en.yaml
+title: "Data Science"
+buttonLabel: "View K-Means Demo on GitHub"
+
+topics:
+  - name: "Predictive Modeling"
+    tools: ["Python", "scikit-learn"]
+  - name: "Data Analysis"
+    tools: ["pandas", "NumPy"]
+  - name: "Data Visualization"
+    tools: ["Matplotlib", "Plotly"]
+  - name: "Machine Learning"
+    tools: ["TensorFlow", "PyTorch"]
+  - name: "Statistical Methods"
+    tools: ["Regression", "Clustering"]
