@@ -1,0 +1,17 @@
+---
+const acceptLanguage = Astro.request.headers.get('accept-language');
+const preferred = acceptLanguage?.startsWith('de') ? 'de' : 'en';
+const target = `/${preferred}/`;
+---
+
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content={`0; URL='${target}'`} />
+    <script>
+      window.location.href = {JSON.stringify(target)};
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to your preferred language…</p>
+  </body>
+</html>
