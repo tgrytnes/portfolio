@@ -1,0 +1,69 @@
+- period: "10.2019 - 06.2025"
+  title:  "B.Sc. Mathematics"
+  org:    "Open University"
+  place:  "UK / Distance"
+  details:
+    - Advanced Real Analysis, Abstract Linear Algebra, Stochastic Modeling
+    - Further Pure Mathematics (distinction)
+
+- period: "05.2023 - 05.2025"
+  title:  "Agile Enablement & PMO"
+  org:    "Mercedes-Benz AG"
+  place:  "Sindelfingen"
+  details: 	
+    - Scaled Agile Framework (SAFe) adoption
+    - Optimized Jira & Confluence workflows
+    - Developed Agile KPIs & Dashboards
+
+- period: "01.2022 - 05.2023"
+  title:  "IT-Projektmanager (CRM Digitisation)"
+  org:    "WINGS – Wismar International"
+  place:  "Remote"
+  details:
+    - "Implemented digital contract management & e-signature solution"
+    - "Integrated CRM with telephony for automated call logging"
+    - "Designed GDPR-compliant alumni data workflows"
+
+- period: "05.2020 - 01.2022"
+  title:  "CEO Startup Company"
+  org:    "I4Y GmbH"
+  place:  "Augsburg"
+  details:
+    - "Co-founded startup for ad-funded info systems & Smart City SaaS"
+    - "Led product development, sales & operations"
+
+- period: "01.2012 - 05.2020"
+  title:  "Regional- & Projektmanager"
+  org:    "Funkwerk Systems GmbH"
+  place:  "Karlsfeld (b. München)"
+  details:
+    - "Managed passenger info & infrastructure projects in Germany & Scandinavia"
+    - "Negotiated SLAs & launched OTRS ticketing system (ITIL)"
+    - "Introduced Scrum, establishing a PMO for multi-project coordination"
+
+- period: "04.2007 - 12.2011"
+  title:  "Project Manager"
+  org:    "ATRON electronic GmbH"
+  place:  "Markt Schwaben"
+  details:
+    - "Led implementation of public transport ticketing systems in DACH & Scandinavia"
+    - "Oversaw software development & system integration projects"
+    - "Coordinated tech rollouts to improve transit efficiency"
+
+- period: "2015 - 2010"
+  title:  "MBA (Organisations­management)"
+  org:    "AKAD University Leipzig"
+  place:  "Leipzig"
+  details:
+    - "Specialization in Organizational Development & Change Management"
+    - "Thesis on Strategic Leadership in Remote Learning Environments"
+    - "Led cross-functional team simulations and workshops"
+
+- period: "1998 - 2005"
+  title:  "Cand. Polit. (Master)"
+  org:    "University of Oslo"
+  place:  "Oslo"
+  details:
+    - "Major in Political Science with focus on European Governance"
+    - "Conducted empirical research on policy diffusion in Scandinavia"
+    - "Presented findings at academic conferences in Oslo"

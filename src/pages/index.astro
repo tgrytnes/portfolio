@@ -33,15 +33,32 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
       Mathematiker · IT Project Manager · Data Scientist<br/>
       <span class="font-semibold text-indigo-700">Freelancer</span>
     </p>
+
+    <section class="mt-4 text-center">
+      <div class="flex justify-center gap-6 text-indigo-600 text-lg">
+        <a href="https://www.linkedin.com/in/thomas-fey-grytnes-9b93822" target="_blank" rel="noopener" class="flex items-center gap-1 hover:underline">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98h.02c1.1 0 1.98-.88 1.98-1.98C6.98 4.38 6.1 3.5 4.98 3.5zM3.5 8h3v12h-3zM9.5 8h2.88v1.71h.04c.4-.76 1.38-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.59V20h-3v-5.57c0-1.33-.03-3.05-1.87-3.05-1.88 0-2.17 1.46-2.17 2.96V20h-3z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.freelance.de/Freelancer/183292-IT-manager" target="_blank" rel="noopener" class="flex items-center gap-1 hover:underline">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="currentColor" viewBox="0 0 640 512"><path d="M289.2 112l30.2 41.5L240.6 256l65.7 102.5L352 256h127.5l-63.7 106.3L640 112H418.3l-33.6 56.1L289.2 112zM0 400l134.2-206.9L255.4 400H0z"/></svg>
+          Freelancer
+        </a>
+        <a href="https://github.com/tgrytnes" target="_blank" rel="noopener" class="flex items-center gap-1 hover:underline">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 .1 1.6-.7 1.9-1 .1-.7.4-1.2.7-1.5-2.6-.3-5.4-1.3-5.4-5.7 0-1.3.5-2.3 1.2-3.2-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 1.8-.5 2.7-.5s1.8.2 2.7.5c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.1.7.9 1.2 1.9 1.2 3.2 0 4.4-2.8 5.4-5.4 5.7.4.4.7 1 .7 2v3c0 .3.2.6.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </section>
   </section>
 
   <section class="my-16 container mx-auto px-6 max-w-6xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-24" style="grid-template-columns: minmax(400px,1.1fr) 1.3fr;">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24" style="grid-template-columns: minmax(400px,1.6fr) 1fr;">
       <!-- Left column: Timeline -->
       <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
         <h2 class="text-3xl font-bold mb-16 text-center md:text-left">Timeline</h2>
         <div class="relative">
-          <ul class="space-y-16 timeline">
+          <ul class="space-y-8 timeline">
             {timeline.map((item, idx) => (
               <li class="timeline-item flex items-start gap-4 pl-8 relative">
                 <div class="absolute left-2 top-2 w-2 h-2 bg-purple-600 rounded-full"></div>
@@ -49,6 +66,21 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
                 <div class="leading-tight">
                   <p class="text-base font-semibold text-gray-800">{item.title}</p>
                   <p class="text-sm text-gray-600">{item.org}{item.place && ` · ${item.place}`}</p>
+                  {item.details && (
+                    <ul class="list-disc list-inside text-gray-700 mt-2">
+                      {item.details.map((detail) => (
+                        <li key={JSON.stringify(detail)}>
+                          {typeof detail === 'string' ? (
+                            detail
+                          ) : (
+                            Object.entries(detail).map(([key, value]) => (
+                              <span key={key}><strong>{key}:</strong> {value}</span>
+                            ))
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </li>
             ))}
@@ -78,9 +110,9 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
         <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
           <h2 class="text-3xl font-bold mb-4">Data Science</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li>Predictive Modeling with Python</li>
-            <li>Data Analysis with pandas & NumPy</li>
-            <li>Visualization with Matplotlib & Seaborn</li>
+            <li>Prädiktive Modellierung mit Python</li>
+            <li>Datenanalyse mit pandas & NumPy</li>
+            <li>Visualisierung mit Matplotlib & Seaborn</li>
           </ul>
           <div class="mt-4 text-center md:text-left">
             <a
@@ -98,14 +130,28 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
           <h2 class="text-3xl font-bold mb-4">Skills</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
             <li>Atlassian tools (Jira & Confluence) – Admin skills</li>
+            <li>Python </li>
             <li>MS Office (Excel, Word, PowerPoint)</li>
             <li>SAP (basic user proficiency)</li>
+            <li>EazyBI – Dashboarding & Reporting</li>
+            <li>MS Project – Projektplanung & Ressourcenmanagement</li>
+            <li>Agile Hive – Agile Metriken & Prozessautomatisierung</li>
+          </ul>
+        </div>
+
+        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+          <h2 class="text-3xl font-bold mb-4">Sprachen</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>Deutsch (fließend)</li>
+            <li>Englisch (fließend)</li>
+            <li>Norwegisch (Muttersprache)</li>
+            <li>Schwedisch & Dänisch (fließend; natürliches Verständnis durch Norwegisch als Muttersprache)</li>
           </ul>
         </div>
 
         <!-- Section: Certificates -->
         <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
-          <h2 class="text-3xl font-bold mb-4">Certificates</h2>
+          <h2 class="text-3xl font-bold mb-4">Zertifikate</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
             <li>Project Management Professional (PMP) – PMI</li>
             <li>ITIL 4 Foundation – PeopleCert</li>
