@@ -59,4 +59,7 @@
     border: 2px solid #fff;
     box-shadow: 0 0 0 2px #6366f1;
   }
+  .card-box {
+    @apply w-full p-6 bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow;
+  }
 }

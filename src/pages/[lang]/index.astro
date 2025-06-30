@@ -93,7 +93,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
   <section class="my-16 container mx-auto px-6 max-w-6xl">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-24" style="grid-template-columns: minmax(400px,1.6fr) 1fr;">
       <!-- Left column: Timeline -->
-      <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+      <div class="card-box">
         <h2 class="text-3xl font-bold mb-8 text-center md:text-left">Timeline</h2>
         <div class="relative">
           <ul class="space-y-8 timeline">
@@ -129,7 +129,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
       <!-- Right column: Multiple Sections -->
       <div class="space-y-8">
         <!-- Section: Case Study -->
-        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+        <div class="card-box">
           <h2 class="text-3xl font-bold mb-4">{vm.title}</h2>
           <p class="mt-4 text-gray-600">{vm.description}</p>
           <div class="mt-4 text-center md:text-left">
@@ -143,7 +143,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
         </div>
 
         <!-- Section: Data Science -->
-        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+        <div class="card-box">
           <h2 class="text-3xl font-bold mb-4">{ds.title}</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
             {ds.topics.map(topic => (
@@ -164,7 +164,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
         </div>
 
         <!-- Section: Skills -->
-        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+        <div class="card-box">
           <h2 class="text-3xl font-bold mb-4">Skills</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
             {skills.skills.map(skill => (
@@ -173,7 +173,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
           </ul>
         </div>
 
-        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+        <div class="card-box">
           <h2 class="text-3xl font-bold mb-4">{langs.title}</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
             {langs.languages.map(lang => (
@@ -185,7 +185,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
         </div>
 
         <!-- Section: Certificates -->
-        <div class="w-full p-4 md:p-6 border-2 border-purple-600 rounded-lg">
+        <div class="card-box">
           <h2 class="text-3xl font-bold mb-4">{certs.title}</h2>
           <ul class="list-disc pl-5 space-y-2 text-gray-700">
             {certs.certificates.map(cert => (
