@@ -4,6 +4,9 @@ certificates:
   - name: "Project Management Professional (PMP)"
     issuer: "PMI"
     year: 2010
+  - name: "PMI Agile Certified Practitioner (PMI-ACP) – inkl. Scrum"
+    issuer: "PMI"
+    year: 2013
   - name: "ITIL 4 Foundation"
     issuer: "PeopleCert"
     year: 2025
