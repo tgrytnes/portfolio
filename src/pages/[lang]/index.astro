@@ -16,6 +16,8 @@ import timelineDE from '../../content/timeline.de.yaml';
 import timelineEN from '../../content/timeline.en.yaml';
 import offersDE from '../../content/offers.de.yaml';
 import offersEN from '../../content/offers.en.yaml';
+import mnemosyneDE from '../../content/mnemosyne.de.yaml';
+import mnemosyneEN from '../../content/mnemosyne.en.yaml';
 import vmDE       from '../../content/versicherungsmathematik.de.yaml';
 import vmEN       from '../../content/versicherungsmathematik.en.yaml';
 import dsDE       from '../../content/data_science.de.yaml';
@@ -32,6 +34,7 @@ const lang = Astro.params.lang ?? "de";
 const general = lang === 'de' ? generalDE : generalEN;
 const timeline = lang === 'de' ? timelineDE : timelineEN;
 const offers = lang === 'de' ? offersDE : offersEN;
+const mnemosyne = lang === 'de' ? mnemosyneDE : mnemosyneEN;
 const vm = lang === 'de' ? vmDE : vmEN;
 const ds = lang === 'de' ? dsDE : dsEN;
 const skills = lang === 'de' ? skillsDE : skillsEN;
@@ -49,7 +52,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
 
 <Layout lang={lang}>
   <!-- Hero / intro -->
-  <section class="relative flex flex-col items-center py-16 md:py-24 bg-gradient-to-b from-indigo-50 via-white to-white overflow-hidden">
+  <section class="relative flex flex-col items-center py-12 md:py-20 bg-gradient-to-b from-indigo-50 via-white to-white overflow-hidden">
     <!-- Decorative background blob -->
     <svg aria-hidden="true"
       class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 blur-2xl w-[60rem] h-[60rem] text-indigo-100 pointer-events-none"
@@ -93,7 +96,7 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
 
   </section>
 
-  <section class="mt-10 mb-16 container mx-auto px-6 max-w-6xl">
+  <section class="mt-6 mb-16 container mx-auto px-6 max-w-6xl">
     <div class="mb-12">
       <div class="card-box">
         <h2 class="text-3xl font-bold mb-3">{offers.title}</h2>
@@ -149,6 +152,28 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
 
       <!-- Right column: Multiple Sections -->
       <div class="space-y-8">
+        <div class="card-box">
+          <h2 class="text-3xl font-bold mb-3">{mnemosyne.title}</h2>
+          <p class="text-base font-semibold text-gray-800">{mnemosyne.subtitle}</p>
+          <p class="mt-3 text-gray-700 leading-relaxed">{mnemosyne.description}</p>
+          <p class="mt-3 text-gray-700 leading-relaxed">{mnemosyne.overview}</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-800">{mnemosyne.capabilitiesTitle}</h3>
+          <ul class="mt-2 list-disc pl-5 space-y-1 text-gray-700">
+            {mnemosyne.capabilities.map((capability) => (
+              <li key={capability}>{capability}</li>
+            ))}
+          </ul>
+          <div class="mt-4 text-center md:text-left">
+            <a
+              href={mnemosyne.ctaHref}
+              target="_blank"
+              class="btn inline-flex items-center gap-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-medium shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-200 ease-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
+            >
+              {mnemosyne.ctaLabel}
+            </a>
+          </div>
+        </div>
+
         <!-- Section: Case Study -->
         <div class="card-box">
           <h2 class="text-3xl font-bold mb-4">{vm.title}</h2>

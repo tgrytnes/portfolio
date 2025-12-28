@@ -1,0 +1,18 @@
+title: "Mnemosyne"
+subtitle: "Persönliches Wissensmanagement mit KI-gestützter Mustererkennung"
+description: >
+  Ein sechsschichtiges KI-System, das dein digitales Vault (Obsidian-Notizen, E-Mails, Dokumente) einliest,
+  verborgene Muster erkennt und umsetzbare Insights über eine Telegram-Schnittstelle liefert.
+overview: >
+  Mnemosyne verwandelt verstreutes Wissen in strukturierte, umsetzbare Erkenntnisse
+  durch autonome Mustererkennung und intelligente Projektsteuerung.
+capabilitiesTitle: "Kernfähigkeiten"
+capabilities:
+  - "Automatisches Einlesen: Überwacht Obsidian-Vault, E-Mail-Archive und Dokumente"
+  - "Semantisches Clustering: Gruppiert Inhalte via Embeddings"
+  - "Mustererkennung: Autonomer \"Scout\" entdeckt Projektchancen"
+  - "Intelligente Gatekeeper: Human-in-the-loop-Freigaben für Vault-Änderungen"
+  - "Telegram-Interface: Konversationeller Zugriff auf dein Wissen"
+  - "Projektmanagement: Verfolgt aktive Projekte mit Pressure Scores und Deadlines"
+ctaLabel: "Auf GitHub ansehen"
+ctaHref: "https://github.com/tgrytnes/mnemosyne"

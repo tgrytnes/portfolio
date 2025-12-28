@@ -1,0 +1,18 @@
+title: "Mnemosyne"
+subtitle: "Personal Knowledge Management System with AI-powered Pattern Discovery"
+description: >
+  A 6-layer AI system that ingests your digital vault (Obsidian notes, emails, documents),
+  discovers hidden patterns, and surfaces actionable insights through a Telegram interface.
+overview: >
+  Mnemosyne transforms your scattered knowledge into structured, actionable intelligence
+  through autonomous pattern detection and intelligent project management.
+capabilitiesTitle: "Core Capabilities"
+capabilities:
+  - "Automatic ingestion: Monitors Obsidian vault, email archives, and documents"
+  - "Semantic clustering: Groups similar content using embeddings"
+  - "Pattern detection: Autonomous \"Scout\" discovers project opportunities"
+  - "Intelligent gatekeepers: Human-in-the-loop approval for vault modifications"
+  - "Telegram interface: Conversational access to your knowledge"
+  - "Project management: Tracks active projects with pressure scores and deadlines"
+ctaLabel: "View on GitHub"
+ctaHref: "https://github.com/tgrytnes/mnemosyne"
