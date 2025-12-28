@@ -1,0 +1,13 @@
+title: "Three Levers for MAN"
+intro: >
+  With 15 years of experience in complex software projects and a strong theoretical foundation
+  (B.Sc. Mathematics, M.Sc. AI in progress), I bridge algorithms and industrial practice.
+  I focus on solutions that scale and stay technology-flexible: fluent in the Azure ecosystem,
+  and equally efficient with open-source stacks to maximize independence.
+items:
+  - name: "RAG & Knowledge Management"
+    description: "Turn internal expertise (PDFs, manuals) into chat-ready answers, either via Azure AI or privacy-first with local LLMs."
+  - name: "Automated Workflows"
+    description: "End-to-end data processing chains, from SharePoint integration through tailored Python automation beyond the M365 stack."
+  - name: "Intelligent Damage Detection (Computer Vision)"
+    description: "Use Vision Transformers (ViT) for automated wear diagnosis, moving from manual visual inspection to scalable predictive maintenance."

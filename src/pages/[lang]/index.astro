@@ -14,6 +14,8 @@ import generalDE from '../../content/general.de.yaml';
 import generalEN from '../../content/general.en.yaml';
 import timelineDE from '../../content/timeline.de.yaml';
 import timelineEN from '../../content/timeline.en.yaml';
+import offersDE from '../../content/offers.de.yaml';
+import offersEN from '../../content/offers.en.yaml';
 import vmDE       from '../../content/versicherungsmathematik.de.yaml';
 import vmEN       from '../../content/versicherungsmathematik.en.yaml';
 import dsDE       from '../../content/data_science.de.yaml';
@@ -29,6 +31,7 @@ const lang = Astro.params.lang ?? "de";
 
 const general = lang === 'de' ? generalDE : generalEN;
 const timeline = lang === 'de' ? timelineDE : timelineEN;
+const offers = lang === 'de' ? offersDE : offersEN;
 const vm = lang === 'de' ? vmDE : vmEN;
 const ds = lang === 'de' ? dsDE : dsEN;
 const skills = lang === 'de' ? skillsDE : skillsEN;
@@ -91,6 +94,24 @@ const projects = rawProjects.map(project => ({ frontmatter: project.data }));
   </section>
 
   <section class="my-16 container mx-auto px-6 max-w-6xl">
+    <div class="mb-12">
+      <div class="card-box">
+        <h2 class="text-3xl font-bold mb-3">{offers.title}</h2>
+        <p class="text-gray-700 leading-relaxed">{offers.intro}</p>
+        <ol class="mt-6 grid gap-4 md:grid-cols-3">
+          {offers.items.map((item, idx) => (
+            <li class="flex gap-3" key={item.name}>
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-semibold">{idx + 1}</span>
+              <div>
+                <p class="text-lg font-semibold text-gray-800">{item.name}</p>
+                <p class="text-sm text-gray-700 leading-relaxed">{item.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-24" style="grid-template-columns: minmax(400px,1.6fr) 1fr;">
       <!-- Left column: Timeline -->
       <div class="card-box">

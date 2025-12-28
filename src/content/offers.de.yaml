@@ -1,0 +1,14 @@
+title: "Drei Hebel für MAN"
+intro: >
+  Mit 15 Jahren Erfahrung in komplexen Softwareprojekten und einem tiefen theoretischen Fundament
+  (B.Sc. Mathematik, M.Sc. AI i.A.) schlage ich die Brücke zwischen Algorithmen und industrieller Praxis.
+  Mein Fokus liegt auf Lösungen, die skalieren; dabei bin ich technologisch flexibel:
+  Ich beherrsche das Azure-Ökosystem, realisiere Projekte aber ebenso effizient mit Open-Source-Stacks,
+  um maximale Unabhängigkeit zu gewährleisten.
+items:
+  - name: "RAG & Wissensmanagement"
+    description: "Internes Expertenwissen (PDFs, Handbücher) per Chat sofort nutzbar machen - wahlweise über Azure AI oder datensouverän mit lokalen LLMs."
+  - name: "Automatisierte Workflows"
+    description: "Komplette Prozessketten zur Datenverarbeitung, von der SharePoint-Anbindung bis hin zu maßgeschneiderten Python-Automatisierungen außerhalb der M365-Welt."
+  - name: "Intelligente Schadenserkennung (Computer Vision)"
+    description: "Einsatz von Vision Transformers (ViT) zur automatisierten Diagnose von Verschleiß. Der direkte Weg von der manuellen Sichtprüfung zur skalierbaren Predictive Maintenance."
